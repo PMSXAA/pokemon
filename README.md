@@ -43,7 +43,7 @@ Last updated: 2024.12
 ## SonarQube
 
     For execute sonarqube need:
-        - Sonarqube-10.1.0.73491 version
+        - Sonarqube-10.8 version
         - Complexity coverage is 90% or high
 
 ## Swagger documentation

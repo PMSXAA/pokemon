@@ -11,8 +11,8 @@ Last updated: 2024.12
 - Overview
 - Architecture
 - Dependencies
-- Run microservice
-- Run AmTcPnrApplication
+- Run Soap
+- Run PokemonApplication
 - Sonarqube
 - Swagger documentation
 - Jacoco Documentation

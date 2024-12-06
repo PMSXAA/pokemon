@@ -35,7 +35,7 @@ Last updated: 2024.12
 
 ## Run Soap
 
-### Run AmTcPnrApplication
+### Run PokemonApplication
 
 1. Run the maven command `mvn clean install` or `mvn clean install -DSkipTests` in the project path.
 2. Run the maven `mvn spring-boot:run` command to start a microservice instance or using the tools provided by the IDE

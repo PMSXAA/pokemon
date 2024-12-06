@@ -19,7 +19,7 @@ Last updated: 2024.12
 
 ## Overview
 
-- Soap to get basic , get information by soap client.
+- Soap to get basic abilities, base_experience, held_items, id, name, location_area_encounters by soap client.
 
 ## Architecture
 
@@ -31,17 +31,9 @@ Last updated: 2024.12
 
 ## Dependencies
 
-- am-tb-soap-pnr          https://github.com/EC-AMX/am-tb-soap-pnr/tree/develop  or
-- am-tb-pnr               https://github.com/EC-AMX/am-tb-pnr/tree/develop
-- am-tb-airports-info     https://github.com/EC-AMX/am-tb-airports-info/tree/develop
-- am-tb-fare-family       https://github.com/EC-AMX/am-tb-fare-family/tree/develop
-- am-tb-timezone          https://github.com/EC-AMX/am-tb-timezone/tree/develop
-- am-tb-region            https://github.com/EC-AMX/am-tb-region/tree/develop
-- am-tb-employee-standby  https://github.com/EC-AMX/am-tb-employee-standby/tree/develop
-- am-tb-pnt-list          https://github.com/EC-AMX/am-tb-pnr-list/tree/develop
-- am-tb-update-pnr        https://github.com/EC-AMX/am-tb-update-pnr/tree/develop
+- Pokemon Api         https://pokeapi.co/](https://pokeapi.co/api/v2/pokemon/
 
-## Run Microservice
+## Run Soap
 
 ### Run AmTcPnrApplication
 

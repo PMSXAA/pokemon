@@ -33,7 +33,6 @@ public class PokemonSearchServiceImpl implements PokemonSearchService{
 	@Override
 	public PokemonModel searchName(String name) {
 		
-		
 		PokemonModel pokemonNameModel = new PokemonModel();
 		
 		ResponseEntity<Pokemon> responsePokemonEntity = doPokemon(name);

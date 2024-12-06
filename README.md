@@ -1,10 +1,10 @@
 # Pokemon Soap
 
-Link: [GitHub-am-tc-reservation](https://github.com/EC-AMX/am-tc-reservation)
+Link: [GitHub-pokemon-soap](https://github.com/PMSXAA/pokemon)
 
-Author(s): -
+Author(s): - Jose Juan Zapote Baltazar
 
-Last updated: 2023.12
+Last updated: 2024.12
 
 ## Content
 

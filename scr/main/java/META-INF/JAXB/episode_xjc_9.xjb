@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="3.0" xmlns="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por Eclipse Implementation of JAXB v3.0.2 
+Visite https://eclipse-ee4j.github.io/jaxb-ri 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2024.12.06 a las 09:02:40 AM CST 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://soap.pokemon/">
+    <schemaBindings map="false">
+      <package name="pokemon.soap"/>
+    </schemaBindings>
+    <bindings scd="tns:getNameRequest">
+      <class ref="pokemon.soap.GetNameRequest"/>
+    </bindings>
+    <bindings scd="tns:getNameResponse">
+      <class ref="pokemon.soap.GetNameResponse"/>
+    </bindings>
+    <bindings scd="tns:getIdRequest">
+      <class ref="pokemon.soap.GetIdRequest"/>
+    </bindings>
+    <bindings scd="tns:getIdResponse">
+      <class ref="pokemon.soap.GetIdResponse"/>
+    </bindings>
+    <bindings scd="tns:getAbilitiesRequest">
+      <class ref="pokemon.soap.GetAbilitiesRequest"/>
+    </bindings>
+    <bindings scd="tns:getAbilitiesResponse">
+      <class ref="pokemon.soap.GetAbilitiesResponse"/>
+    </bindings>
+    <bindings scd="~tns:abilitie">
+      <class ref="pokemon.soap.Abilitie"/>
+    </bindings>
+    <bindings scd="tns:getBaseExpRequest">
+      <class ref="pokemon.soap.GetBaseExpRequest"/>
+    </bindings>
+    <bindings scd="tns:getBaseExpResponse">
+      <class ref="pokemon.soap.GetBaseExpResponse"/>
+    </bindings>
+    <bindings scd="tns:getHeldItemsRequest">
+      <class ref="pokemon.soap.GetHeldItemsRequest"/>
+    </bindings>
+    <bindings scd="tns:getHeldItemsResponse">
+      <class ref="pokemon.soap.GetHeldItemsResponse"/>
+    </bindings>
+    <bindings scd="~tns:heldItem">
+      <class ref="pokemon.soap.HeldItem"/>
+    </bindings>
+    <bindings scd="tns:getLocationAreaEncuentersRequest">
+      <class ref="pokemon.soap.GetLocationAreaEncuentersRequest"/>
+    </bindings>
+    <bindings scd="tns:getLocationAreaEncuentersResponse">
+      <class ref="pokemon.soap.GetLocationAreaEncuentersResponse"/>
+    </bindings>
+    <bindings scd="~tns:locationAreaEncuenters">
+      <class ref="pokemon.soap.LocationAreaEncuenters"/>
+    </bindings>
+  </bindings>
+</bindings>
+

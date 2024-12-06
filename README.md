@@ -46,10 +46,10 @@ Last updated: 2024.12
         - Sonarqube-10.8 version
         - Complexity coverage is 90% or high
 
-## Swagger documentation
+## Swagger Soap documentation
 
 To see the swagger ui, run the **AmTcPnrApplication** and open in the browser the
-link http://localhost:8085/swagger-ui/index.html
+link [http://localhost:8085/swagger-ui/index.html](http://localhost:8080/ws/xsd/pokemon.wsdl)
 
 ## Jacoco documentation
 

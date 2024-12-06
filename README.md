@@ -19,14 +19,13 @@ Last updated: 2024.12
 
 ## Overview
 
-- Microservice to get basic information reservation, get information by rest client or soap client.
+- Soap to get basic , get information by soap client.
 
 ## Architecture
 
 - Use Java 17 version
-- Use Maven 3.6 or high version
-- Use loombok 1.18.28 version
-- Use spring boot 3.2.0 version
+- Use Maven 4.0.0
+- Use spring boot 3.4.0 version
 - Use jacoco 0.8.10 version for Testing and for documentation microservice
 - Use swagger 3.0.0 version for documentation microservice
 

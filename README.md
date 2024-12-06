@@ -55,7 +55,5 @@ link http://localhost:8085/swagger-ui/index.html
 
     For view jacoco documentation:
         - Execute mvn clean install for build project, after build is generate folder apidocs:
-        - In (root)\am-tc-region\target\apidocs\index.html
-            - Click in index.html for view documentation of microservice
-        - In (root)\am-tc-region\target\site\jacoco\index.html
-            - Click in index.html for view jacoco information of microservice
+        - In (root)\pokemon\target\site\jacoco\index.html
+            - Click in index.html for view jacoco information of soap

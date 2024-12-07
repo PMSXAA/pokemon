@@ -31,7 +31,7 @@ Last updated: 2024.12
 
 ## Dependencies
 
-- Pokemon Api         https://pokeapi.co/](https://pokeapi.co/api/v2/pokemon/
+- Pokemon Api         [https://pokeapi.co/api/v2/pokemon/]
 
 ## Run Soap
 

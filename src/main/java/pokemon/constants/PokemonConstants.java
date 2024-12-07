@@ -14,5 +14,5 @@ public class PokemonConstants {
 	public static final String METHOD_LOCATION_AREA_ENCOUNTES = "LOCATION_AREA_ENCOUNTES";
 	public static final String ENDPOINT_POKEMON = "https://pokeapi.co/api/v2/pokemon/";
 	public static final String ENDPOINT_POKEMON_LOCATION_AREA_ENCOUNTES = "https://pokeapi.co/api/v2/pokemon/{id}/encounters";
-
+	public static final String MESSAGE_NO_FOUND_POKEMON = "No se encontro el pokemon";
 }

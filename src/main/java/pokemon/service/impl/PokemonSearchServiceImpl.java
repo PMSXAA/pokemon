@@ -47,8 +47,8 @@ public class PokemonSearchServiceImpl implements PokemonSearchService{
 			pokemonNameModel.setName(pokemon.getName());
 			saveRequestHistory(PokemonConstants.METHOD_NAME, endTime, name, pokemon.getName());
 		}else {
-			pokemonNameModel.setName("No se encontro el pokemon");
-			saveRequestHistory(PokemonConstants.METHOD_NAME, endTime, name, "No se encontro el pokemon");
+			pokemonNameModel.setName(PokemonConstants.MESSAGE_NO_FOUND_POKEMON);
+			saveRequestHistory(PokemonConstants.METHOD_NAME, endTime, name, PokemonConstants.MESSAGE_NO_FOUND_POKEMON);
 		}
 		
 		return pokemonNameModel;
@@ -68,7 +68,7 @@ public class PokemonSearchServiceImpl implements PokemonSearchService{
 			saveRequestHistory(PokemonConstants.METHOD_ID, endTime, name, String.valueOf(pokemon.getId()));
 		}else {
 			pokemonNameModel.setId(-1);
-			saveRequestHistory(PokemonConstants.METHOD_ID ,endTime, name, "No se encontro el pokemon");
+			saveRequestHistory(PokemonConstants.METHOD_ID ,endTime, name, PokemonConstants.MESSAGE_NO_FOUND_POKEMON);
 		}
 		
 		return pokemonNameModel;
@@ -88,11 +88,11 @@ public class PokemonSearchServiceImpl implements PokemonSearchService{
 			for(Abilities abilitie: pokemon.getAbilities()) {
 				abilities.add(abilitie);
 			}
-			saveRequestHistory(PokemonConstants.METHOD_ABILITIES, endTime, name, pokemon.getAbilities().toString());;
+			saveRequestHistory(PokemonConstants.METHOD_ABILITIES, endTime, name, pokemon.getAbilities().toString());
 			pokemonNameModel.setAbilities(abilities);
 			
 		}else {
-			pokemonNameModel.setName("No se encontro el pokemon");
+			pokemonNameModel.setName(PokemonConstants.MESSAGE_NO_FOUND_POKEMON);
 		}
 		
 		return pokemonNameModel;
@@ -134,7 +134,7 @@ public class PokemonSearchServiceImpl implements PokemonSearchService{
 			pokemonNameModel.setHelditems(helpItem);
 			
 		}else {
-			pokemonNameModel.setName("No se encontro el pokemon");
+			pokemonNameModel.setName(PokemonConstants.MESSAGE_NO_FOUND_POKEMON);
 		}
 		return pokemonNameModel;
 	}
@@ -158,10 +158,10 @@ public class PokemonSearchServiceImpl implements PokemonSearchService{
 				saveRequestHistory(PokemonConstants.METHOD_LOCATION_AREA_ENCOUNTES, endTime, name, String.join(" ", pokemonLocationList));
 				pokemonNameModel.setLocationAreaEncounters(pokemonLocationList);
 			}else {
-				pokemonNameModel.setName("No se encontro el pokemon");
+				pokemonNameModel.setName(PokemonConstants.MESSAGE_NO_FOUND_POKEMON);
 			}
 		}else {
-			pokemonNameModel.setName("No se encontro el pokemon");
+			pokemonNameModel.setName(PokemonConstants.MESSAGE_NO_FOUND_POKEMON);
 		}
 		return pokemonNameModel;
 	}

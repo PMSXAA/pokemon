@@ -33,7 +33,11 @@ public class PokemonSearchServiceImpl implements PokemonSearchService{
 	@Override
 	public PokemonModel searchName(String name) {
 		
+		long startTime = System.currentTimeMillis();
+		
 		PokemonModel pokemonNameModel = new PokemonModel();
+		
+		long endTime = System.currentTimeMillis() - startTime; 
 		
 		ResponseEntity<Pokemon> responsePokemonEntity = doPokemon(name);
 		
@@ -41,10 +45,10 @@ public class PokemonSearchServiceImpl implements PokemonSearchService{
 			
 			Pokemon pokemon = responsePokemonEntity.getBody();
 			pokemonNameModel.setName(pokemon.getName());
-			saveRequestHistory(PokemonConstants.METHOD_NAME, 0L, name, pokemon.getName());
+			saveRequestHistory(PokemonConstants.METHOD_NAME, endTime, name, pokemon.getName());
 		}else {
 			pokemonNameModel.setName("No se encontro el pokemon");
-			saveRequestHistory(PokemonConstants.METHOD_NAME, 0L, name, "No se encontro el pokemon");
+			saveRequestHistory(PokemonConstants.METHOD_NAME, endTime, name, "No se encontro el pokemon");
 		}
 		
 		return pokemonNameModel;
@@ -53,17 +57,18 @@ public class PokemonSearchServiceImpl implements PokemonSearchService{
 	@Override
 	public PokemonModel searchId(String name) {
 		
+		long startTime = System.currentTimeMillis();
 		PokemonModel pokemonNameModel = new PokemonModel();
 		
 		ResponseEntity<Pokemon> responsePokemonEntity = doPokemon(name);
-		
+		long endTime = System.currentTimeMillis() - startTime; 
 		if(responsePokemonEntity.getStatusCode().value() == 200) {
 			Pokemon pokemon = responsePokemonEntity.getBody();
 			pokemonNameModel.setId(pokemon.getId());
-			saveRequestHistory(PokemonConstants.METHOD_ID, 0L, name, String.valueOf(pokemon.getId()));
+			saveRequestHistory(PokemonConstants.METHOD_ID, endTime, name, String.valueOf(pokemon.getId()));
 		}else {
 			pokemonNameModel.setId(-1);
-			saveRequestHistory(PokemonConstants.METHOD_ID ,0L, name, "No se encontro el pokemon");
+			saveRequestHistory(PokemonConstants.METHOD_ID ,endTime, name, "No se encontro el pokemon");
 		}
 		
 		return pokemonNameModel;
@@ -72,17 +77,18 @@ public class PokemonSearchServiceImpl implements PokemonSearchService{
 	@Override
 	public PokemonModel searchAbilities(String name) {
 		
+		long startTime = System.currentTimeMillis();
 		PokemonModel pokemonNameModel = new PokemonModel();
 		
 		ResponseEntity<Pokemon> responsePokemonEntity = doPokemon(name);
-		
+		long endTime = System.currentTimeMillis() - startTime; 
 		if(responsePokemonEntity.getStatusCode().value() == 200) {
 			Pokemon pokemon = responsePokemonEntity.getBody();
 			List<Abilities> abilities = new ArrayList<>();
 			for(Abilities abilitie: pokemon.getAbilities()) {
 				abilities.add(abilitie);
 			}
-			saveRequestHistory(PokemonConstants.METHOD_ABILITIES, 0L, name, pokemon.getAbilities().toString());;
+			saveRequestHistory(PokemonConstants.METHOD_ABILITIES, endTime, name, pokemon.getAbilities().toString());;
 			pokemonNameModel.setAbilities(abilities);
 			
 		}else {
@@ -95,15 +101,15 @@ public class PokemonSearchServiceImpl implements PokemonSearchService{
 	@Override
 	public PokemonModel searchBaseExperience(String name) {
 		
-		
+		long startTime = System.currentTimeMillis();
 		PokemonModel pokemonNameModel = new PokemonModel();
 		
 		ResponseEntity<Pokemon> responsePokemonEntity = doPokemon(name);
-		
+		long endTime = System.currentTimeMillis() - startTime; 
 		if(responsePokemonEntity.getStatusCode().value() == 200) {
 			Pokemon pokemon = responsePokemonEntity.getBody();
 			pokemonNameModel.setBase_experience(pokemon.getBase_experience());
-			saveRequestHistory(PokemonConstants.METHOD_BASE_EXPERIENCE, 0L, name, String.valueOf(pokemon.getBase_experience()));
+			saveRequestHistory(PokemonConstants.METHOD_BASE_EXPERIENCE, endTime, name, String.valueOf(pokemon.getBase_experience()));
 			
 		}else {
 			pokemonNameModel.setBase_experience(-1);
@@ -114,15 +120,17 @@ public class PokemonSearchServiceImpl implements PokemonSearchService{
 	
 	@Override
 	public PokemonModel searchHeldItems(String name) {
+		long startTime = System.currentTimeMillis();
 		PokemonModel pokemonNameModel = new PokemonModel();
 		ResponseEntity<Pokemon> responsePokemonEntity = doPokemon(name);
+		long endTime = System.currentTimeMillis() - startTime; 
 		if(responsePokemonEntity.getStatusCode().value() == 200) {
 			Pokemon pokemon = responsePokemonEntity.getBody();
 			List<String> helpItem = new ArrayList<>();
 			for(HeldItems heldItems: pokemon.getHeld_items()) {
 				helpItem.add(heldItems.getItem().getName());
 			}
-			saveRequestHistory(PokemonConstants.METHOD_HELD_ITEMS, 0L, name, pokemon.getHeld_items().toString());
+			saveRequestHistory(PokemonConstants.METHOD_HELD_ITEMS, endTime, name, pokemon.getHeld_items().toString());
 			pokemonNameModel.setHelditems(helpItem);
 			
 		}else {
@@ -134,19 +142,20 @@ public class PokemonSearchServiceImpl implements PokemonSearchService{
 	@Override
 	public PokemonModel searchLocationAreaEncounters(String name) {
 		
-		
+		long startTime = System.currentTimeMillis();
 		PokemonModel pokemonNameModel = new PokemonModel();
 		ResponseEntity<Pokemon> responsePokemonEntity = doPokemon(name);
 		if(responsePokemonEntity.getStatusCode().value() == 200) {
 			Pokemon pokemon = responsePokemonEntity.getBody();
 			ResponseEntity<PokemonLocation[]> response = doPokemonLocation(pokemon.getId());
+			long endTime = System.currentTimeMillis() - startTime; 
 			if(response.getStatusCode().value() == 200) {
 				PokemonLocation [] pokemonLocations = response.getBody();
 				List<String> pokemonLocationList = new ArrayList<>();
 				for(PokemonLocation pokemonLocation: pokemonLocations) {
 					pokemonLocationList.add(pokemonLocation.getLocation_area().getName());
 				}
-				saveRequestHistory(PokemonConstants.METHOD_LOCATION_AREA_ENCOUNTES, 0L, name, String.join(" ", pokemonLocationList));
+				saveRequestHistory(PokemonConstants.METHOD_LOCATION_AREA_ENCOUNTES, endTime, name, String.join(" ", pokemonLocationList));
 				pokemonNameModel.setLocationAreaEncounters(pokemonLocationList);
 			}else {
 				pokemonNameModel.setName("No se encontro el pokemon");
